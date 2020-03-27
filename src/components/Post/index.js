@@ -3,36 +3,30 @@ import React from 'react'
 import {
     Container,
     FlexContainer,
-    ImageContainer,
+    VoteCount,
     Image,
     Content,
     VoteContainer,
-    Footer
+    Footer,
+    UpvoteButton,
+    DownvoteButton
 } from './styles'
-import check from '../../assets/check-mark.png'
-import xmark from '../../assets/red-x.png'
-import upvote from '../../assets/upvote-v1.png'
-import downvote from '../../assets/downvote.png'
+// import check from '../../assets/check-mark.png'
+// import xmark from '../../assets/red-x.png'
+// import upvote from '../../assets/upvote-v1.png'
+// import downvote from '../../assets/downvote.png'
 
-export default function post(props) {
+export default function post({isBoast, content, upvotes, downvotes, upvote, downvote}) {
     return (
         <Container>
             <FlexContainer>
-                <ImageContainer>
-                    <Image alt="" src={props.isBoast ? check : xmark} />
-                </ImageContainer>
+                <VoteCount isBoast={isBoast}>
+                    <i class="fas fa-sort-up" onClick={upvote}></i>
+                    {upvotes - downvotes}
+                    <i class="fas fa-sort-down" onClick={downvote}></i>
+                </VoteCount>
                 <Content>
-                    {props.content}
-                    <Footer>
-                        {props.upvotes}
-                        <VoteContainer>
-                            <Image alt="" src={upvote} onClick={props.upvote} />
-                        </VoteContainer>
-                        {props.downvotes}
-                        <VoteContainer>
-                            <Image alt="" src={downvote} onClick={props.downvote}/>
-                        </VoteContainer>
-                    </Footer>
+                    {content}
                 </Content>
             </FlexContainer>
         </Container>

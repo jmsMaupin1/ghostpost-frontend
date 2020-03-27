@@ -18,17 +18,25 @@ export const Image = styled.img`
     height: auto;
 `
 
-export const ImageContainer = styled.div`
-    margin-left: 15px;
-    max-width: 5vw; 
-`
+export const VoteCount = styled.div(props => ({
+    height: '100px',
+    padding: '10px 0',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '10vw',
+    borderRadius: '10px',
+    backgroundImage: props.isBoast 
+        ? 'linear-gradient(to right, green , #383C44)' 
+        : 'linear-gradient(to right, red , #383C44);'
+}))
 
 export const Content = styled.div`
     width: 100%;
     position: relative;
-    margin-left: 15px;
-    padding-left: 15px;
-    padding-top: 15px;
+    display: flex;
+    align-items: center;
     text-align: left;
 `
 
@@ -45,7 +53,6 @@ export const Footer = styled.div`
     position: absolute;
     display: flex;
     padding-bottom: 5px;
-    padding-left: 15px;
     bottom: 0;
     left: 0;
     width: calc(72.7vw - 2px);
