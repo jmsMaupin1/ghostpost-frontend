@@ -1,14 +1,18 @@
 import React from 'react';
 
 import PostPanel from '../../components/PostPanel';
+import PostMaker from '../../components/PostMaker';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <PostPanel />
+        <PostMaker />
       </header>
+      <div className='App-body'>
+        <PostPanel />
+      </div>
     </div>
   );
 }

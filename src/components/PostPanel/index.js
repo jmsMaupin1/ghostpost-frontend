@@ -34,8 +34,10 @@ export default function PostPanel() {
     }, [])
 
     return (
-        <div className="App">
-          <header className="App-header">
+        <>
+          <header>
+            this will be my sorting bar
+          </header>
             {
               posts.map((cur, index) => {
                 return <Post 
@@ -50,7 +52,6 @@ export default function PostPanel() {
                 />
               })
             }
-          </header>
-        </div>
+        </>
       );
 }
