@@ -26,6 +26,14 @@ export default function PostPanel() {
       .then(result => getPosts())
     }
 
+    let deletePost = (secret_id) => {
+      fetch(`http://localhost:8000/api/posts/${secret_id}/remove`, {
+        method: 'delete'
+      })
+      .then(res => res.json())
+      .then(console.log)
+    }
+
     let sortAndFilter = () => {
       let temp_posts = JSON.parse(JSON.stringify(posts));
       if (sortBy) 

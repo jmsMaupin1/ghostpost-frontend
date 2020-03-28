@@ -8,7 +8,6 @@ export const Container = styled.div`
     background: #383C44;
     margin: 0;
     padding: 0;
-    display: flex;
 `
 
 export const Form = styled.form`
@@ -18,8 +17,9 @@ export const Form = styled.form`
     justify-content: space-around;
     align-items: center;
 
-    > .textbox {
+    > * > .textbox {
         width: 700px;
         font-size: 25px;
+        margin-left: 15px;
     }
 `
