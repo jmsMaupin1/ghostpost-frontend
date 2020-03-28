@@ -3,13 +3,9 @@ import React, { useEffect, useState } from 'react';
 import Post from '../../components/Post';
 import PostSorter from '../../components/PostSorter';
 
-function sort_posts(a, b) {
-  return (a.upvotes - a.downvotes) - (b.upvotes - b.downvotes)
-}
-
 export default function PostPanel() {
     const [posts, setPosts] = useState([])
-    const [sortBy, setSortBy] = useState(() => sort_posts)
+    const [sortBy, setSortBy] = useState(null)
     const [filterBy, setFilterBy] = useState(null)
 
     useEffect(() => {
