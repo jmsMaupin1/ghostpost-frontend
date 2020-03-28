@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PostPanel from '../../components/PostPanel';
+import PostPanel from '../PostPanel';
 import PostMaker from '../../components/PostMaker';
 import './App.css';
 

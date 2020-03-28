@@ -12,9 +12,9 @@ export default function post({isBoast, content, upvotes, downvotes, upvote, down
         <Container>
             <FlexContainer>
                 <VoteCount isBoast={isBoast}>
-                    <i class="fas fa-sort-up" onClick={upvote}></i>
+                    <i className="fas fa-sort-up" onClick={upvote}></i>
                     {upvotes - downvotes}
-                    <i class="fas fa-sort-down" onClick={downvote}></i>
+                    <i className="fas fa-sort-down" onClick={downvote}></i>
                 </VoteCount>
                 <Content>
                     {content}
