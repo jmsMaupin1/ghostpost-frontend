@@ -23,7 +23,7 @@ export const VoteCount = styled.div(props => ({
     width: '10vw',
     borderRadius: '10px',
     backgroundImage: props.isBoast 
-        ? 'linear-gradient(to right, green , #383C44)' 
+        ? 'linear-gradient(to right, blue , #383C44)' 
         : 'linear-gradient(to right, red , #383C44);'
 }))
 
