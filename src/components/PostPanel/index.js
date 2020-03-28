@@ -28,6 +28,8 @@ function getPosts(setPosts) {
 
 export default function PostPanel() {
     const [posts, setPosts] = useState([])
+    const [sort, setSort] = useState(null)
+    const [filter, setFilter] = useState(null)
 
     useEffect(() => {
         getPosts(setPosts)

@@ -13,11 +13,6 @@ export const FlexContainer = styled.div`
     display: flex;
 `
 
-export const Image = styled.img`
-    max-width: 100%;
-    height: auto;
-`
-
 export const VoteCount = styled.div(props => ({
     height: '100px',
     padding: '10px 0',
@@ -38,22 +33,4 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     text-align: left;
-`
-
-export const VoteContainer = styled.div`
-    max-width: 30px;
-    margin: 0 10px;
-
-    &:hover ${Image} {
-        cursor: pointer
-    }
-`
-
-export const Footer = styled.div`
-    position: absolute;
-    display: flex;
-    padding-bottom: 5px;
-    bottom: 0;
-    left: 0;
-    width: calc(72.7vw - 2px);
 `
