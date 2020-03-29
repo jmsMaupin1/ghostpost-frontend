@@ -22,6 +22,8 @@ export default function PostPanel({posts, api}) {
                   isBoast={cur.isBoast}
                   datetime={cur.datetime}
                   key={cur.id}
+                  secret_id={cur.secret_id}
+                  deletePost={api.deletePost.bind(this, cur.secret_id)}
                   upvote={api.sendVote.bind(this, cur.id, 'upvote')}
                   downvote={api.sendVote.bind(this, cur.id, 'downvote')}
                 />

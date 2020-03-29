@@ -42,7 +42,7 @@ export default function PostMaker({api}) {
                             id='isBoast'
                             className='checkbox'
                             type='checkbox'
-                            value={isBoast}
+                            checked={isBoast}
                             onClick={handleisBoastChange}
                         />
                     </div>

@@ -54,12 +54,19 @@ export default function GhostPostProvider({children}) {
             method: 'delete'
         })
         .then(res => res.json())
-        .then(console.log)
+        .then(id => {
+            for(let i = 0; i < posts.length; ++i){
+                if (posts[i].id === id[0])
+                    setPosts([
+                        ...posts.slice(0, i),
+                        ...posts.slice(i + 1)
+                    ])
+            }
+        })
     }
 
     useEffect(() => {
         getPosts()
-        deletePost('RHSUSz')
     // eslint-disable-next-line
     }, [])
 
@@ -71,6 +78,7 @@ export default function GhostPostProvider({children}) {
                 submitPost,
                 getPosts,
                 sendVote,
+                deletePost
             }
         })
     })

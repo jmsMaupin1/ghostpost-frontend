@@ -30,6 +30,10 @@ function filterRoasts(post) {
     return !post.isBoast;
 }
 
+function filterMine(post) {
+    return 'secret_id' in post
+}
+
 function filterNone(post) {
     return true;
 }
@@ -56,6 +60,8 @@ export default function PostSorter({ setSort, setFilter }) {
             setFilter(() => filterBoasts)
         else if (filterBy === 'Roasts')
             setFilter(() => filterRoasts)
+        else if (filterBy === 'Mine')
+            setFilter(() => filterMine)
         else
             setFilter(() => filterNone)
     }
@@ -100,6 +106,9 @@ export default function PostSorter({ setSort, setFilter }) {
                         </MenuItem>
                         <MenuItem onClick={chooseFilter.bind(this, 'Roasts')}>
                             Roasts
+                        </MenuItem>
+                        <MenuItem onClick={chooseFilter.bind(this, 'Mine')}>
+                            Mine
                         </MenuItem>
                         <MenuItem onClick={chooseFilter.bind(this, 'None')}>
                             None

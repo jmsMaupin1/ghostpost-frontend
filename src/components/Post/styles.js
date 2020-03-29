@@ -27,6 +27,14 @@ export const VoteCount = styled.div(props => ({
         : 'linear-gradient(to right, red , #383C44);'
 }))
 
+export const DeleteOption = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #383C44 , #686C74);
+    width: 10vw;
+`
+
 export const Content = styled.div`
     width: 100%;
     position: relative;
