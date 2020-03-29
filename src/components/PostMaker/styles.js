@@ -23,3 +23,10 @@ export const Form = styled.form`
         margin-left: 15px;
     }
 `
+
+export const Header = styled.header`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5vh 0;
+`

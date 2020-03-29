@@ -2,36 +2,27 @@ import React, { useState } from 'react'
 
 import {
     Container,
-    Form
+    Form,
+    Header
 } from './styles.js'
 
-export default function PostMaster() {
+export default function PostMaker({api}) {
 
     const [content, setContent] = useState('');
     const [isBoast, setIsBoast] = useState(false);
 
-    const handleContentChange = e => setContent(e.currentTarget.value)
-    const handleisBoastChange = e => setIsBoast(!isBoast)
+    const handleContentChange = e => setContent(e.currentTarget.value);
+    const handleisBoastChange = e => setIsBoast(!isBoast);
 
     const submitPost = e => {
-        fetch('http://localhost:8000/api/posts/', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                isBoast,
-                content
-            }) 
-        })
-        .then(res => res.json())
-        .then(result => console.log(result))
-
-        e.preventDefault()
+        api.submitPost(isBoast, content);
+        setContent('');
+        setIsBoast(false);
+        e.preventDefault();
     }
 
     return (
-        <>
+        <Header>
             <Container>
                 <Form onSubmit={submitPost}>
                     <div>
@@ -58,6 +49,6 @@ export default function PostMaster() {
                     <input type='submit' value='Submit post' />
                 </Form>
             </Container>
-        </>
+        </Header>
     )
 }

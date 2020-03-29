@@ -69,7 +69,7 @@ export default function PostSorter({ setSort, setFilter }) {
                 <MenuBody>
                     <SelectionItem>
                         {sortSelection}
-                        <i class="fas fa-chevron-down"></i>
+                        <i className="fas fa-chevron-down"></i>
                     </SelectionItem>
                     <MenuHide>
                         <MenuItem onClick={chooseSort.bind(this, 'Ascending')}>
@@ -92,7 +92,7 @@ export default function PostSorter({ setSort, setFilter }) {
                 <MenuBody>
                     <SelectionItem>
                         {filterSelection}
-                        <i class="fas fa-chevron-down"></i>
+                        <i className="fas fa-chevron-down"></i>
                     </SelectionItem>
                     <MenuHide>
                         <MenuItem onClick={chooseFilter.bind(this, 'Boasts')}>
